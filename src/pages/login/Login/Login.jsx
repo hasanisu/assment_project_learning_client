@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className="hero min-h-screen bg-slate-500">
-            <div className="hero-content flex-col">
+        <div className="hero min-h-screen bg-slate-500 ">
+            <div className="hero-content flex-col sm:mt-48 lg:mt-24">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">Dont`t have an account <Link to='/register' className='hover:underline'>Please Register</Link></p>
+                    <p className="py-6 text-orange-400">Dont`t have an account <Link to='/register' className='hover:underline text-indigo-700'>Please Register</Link></p>
                 </div>
-                <div className="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-slate-300">
+                <div className="card flex-shrink-0 lg:w-96 sm:w-86 max-w-sm shadow-2xl bg-slate-300">
                     <form className="card-body">
                         <div className="form-control">
                             <label className="label">
