@@ -42,14 +42,14 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link className="border border-red-600 py-2 px-4 rounded-lg hover:bg-slate-500">
+            <Link to='/courses' className="border border-red-600 py-2 px-4 rounded-lg hover:bg-slate-500">
               Courses
             </Link>
-            <Link className="border border-red-600 py-2 px-4 rounded-lg hover:bg-slate-500">
+            <Link to='/blogs' className="border border-red-600 py-2 px-4 rounded-lg hover:bg-slate-500">
               Blogs
             </Link>
-            <Link className="border border-red-600 py-2 px-4 rounded-lg hover:bg-slate-500">
-              Contact
+            <Link to='/contacts' className="border border-red-600 py-2 px-4 rounded-lg hover:bg-slate-500">
+              Contacts
             </Link>
           </div>
 
