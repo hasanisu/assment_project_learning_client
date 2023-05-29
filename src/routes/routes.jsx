@@ -1,3 +1,4 @@
+import ConfirmCourse from "../pages/basic components/courses compo/ConfirmCourse/ConfirmCourse";
 import CourseDetails from "../pages/basic components/courses compo/CourseDeatails/CourseDetails";
 import Courses from "../pages/basic components/courses compo/Courses/Courses";
 import Homes from "../pages/basic components/Home/Homes";
@@ -30,7 +31,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/courseDetail/:id',
-                element:<CourseDetails></CourseDetails>
+                element:<CourseDetails></CourseDetails>,
+                loader: ({params})=>fetch(`http://localhost:5000/category/${params.id}`)
+            },
+            {
+                path:'/course-confirmed/:id',
+                element:<ConfirmCourse></ConfirmCourse>,
+                loader: ({params})=>fetch(`http://localhost:5000/course-confirmed/${params.id}`)
             }
         ]
     }
