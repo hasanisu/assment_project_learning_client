@@ -10,10 +10,10 @@ const Sidebar = () => {
         .then(data => setCatagory(data))
     },[])
     return (
-        <div className='text-left bg-red-400 lg:h-full'>
-            <h2 className='pt-20 text-xl'>This is All SideBar Menu {catagory.length}</h2>
+        <div className='text-left bg-red-400 lg:h-full px-10'>
+            <h2 className='pt-20 text-xl'>DashBoard:{catagory.length}</h2>
             {
-                catagory.map(sidebar => <p className='mt-8 ' key={sidebar.id}>
+                catagory.map(sidebar => <p className='mt-8 hover:underline' key={sidebar.id}>
                     <Link to={`/courseDetail/${sidebar.id}`}>{sidebar.name}</Link>
                     </p>)
             }

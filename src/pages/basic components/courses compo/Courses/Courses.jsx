@@ -10,7 +10,7 @@ const Courses = () => {
                 <CoursesInfo></CoursesInfo>
             </div>
 
-            <div className='col-span-1 lg:w-full'>
+            <div className='col-span-12 lg:col-span-1 lg:w-full'>
                 <Sidebar></Sidebar>
             </div>
         </div>
