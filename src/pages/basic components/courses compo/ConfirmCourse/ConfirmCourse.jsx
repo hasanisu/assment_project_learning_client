@@ -1,12 +1,14 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import UserContext, { AuthContext } from '../../../../context/UserContext/UserContext';
 
 const ConfirmCourse = () => {
+    const {user} = UserContext(AuthContext);
     const courseConfirmed = useLoaderData();
     const {title} = courseConfirmed;
-    const notify = () => toast("Wow so easy!");
+    toast("Wow so easy!");
     return (
         <div className='mt-20 flex h-screen w-screen justify-center items-center'>
             <div>

@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext/UserContext';
+import { toast } from "react-hot-toast";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, varifyUser} = useContext(AuthContext);
     const [error, setError] = useState();
 
     const handleSubmit = event =>{
@@ -19,12 +20,26 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             form.reset();
+            userVerification();
+            toast.success('Please verify your email')
+            setError('');
             console.log(user)
         })
         .catch(e =>{
             console.error(e)
             setError(e.message);
         })
+
+        const userVerification=()=>{
+            varifyUser()
+            .then(result=>{
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error =>{
+                console.error(error)
+            })
+        }
     }
     return (
         <div className="hero min-h-screen bg-slate-500 ">
