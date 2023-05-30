@@ -8,7 +8,7 @@ import HomeThird from "../HomeThird/HomeThird";
 
 const Homes = () => {
   return (
-    <div>
+    <div className="bg-slate-500">
         <div className="relative">
         {/* Main Part of the Homepage */}
       <img

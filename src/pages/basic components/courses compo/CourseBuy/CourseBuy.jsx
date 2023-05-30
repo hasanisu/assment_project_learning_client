@@ -18,14 +18,15 @@ const CourseBuy = ({ buyCourse }) => {
 
   return (
     
-    <div className="flex bg-slate-300 h-screen w-screen justify-center print">
-       <ReactToPrint trigger={()=> <button className="btn btn-primary mt-20">Pdf <FaPrint className="ms-2"/></button>} content={()=>ref.current}/>
-      <div>
-      <div ref={ref} className="container flex flex-col my-auto w-screen h-full p-6 py-28  mx-auto divide-y rounded-md divide-gray-700  text-black">
+    <div ref={ref} className="flex justify-center print ">
+       
+      <div className=" w-screen h-screen">
+      <div  className="container static flex flex-col p-6 py-28 mx-auto divide-y rounded-md divide-gray-700  text-black">
         <div className="flex justify-between p-4">
           <div className="flex space-x-4">
             <div>
               <div>
+              <ReactToPrint trigger={()=> <button className="btn btn-primary mb-10">Pdf <FaPrint className="ms-2"/></button>} content={()=>ref.current}/>
                 <h4 className="font-bold">Course Teacher</h4>
                 <span className="text-xs text-black">{teacher.name}</span>
               </div>
@@ -42,21 +43,24 @@ const CourseBuy = ({ buyCourse }) => {
             </div>
           </div>
         </div>
-        <h2>Course Overview</h2>
+        
 
-        <div className="mx-auto mb-20 mt-18">
-          <img className=" w-96 h-80 rounded-lg" src={image_url} alt="" />
+        
+        <div className="mx-auto mb-8 mt-18">
+        <h2>Course Overview</h2>
+          <img className="w-48 lg:w-96 h-48 lg:h-80 rounded-lg" src={image_url} alt="" />
         </div>
 
-        <div className="p-4 space-y-2 text-sm text-black w-6/12 mx-auto text-start">
+        <div className="p-4 space-y-2 text-sm text-black w-full lg:w-6/12 mx-auto text-start">
           <p>{details}</p>
         </div>
 
-        <div className="mx-auto ">
+        <div className="mx-auto">
           <Link to={`/course-confirmed/${_id}`}>
             <button onClick={notify} className="btn btn-primary mt-20">Get Premium</button>
           </Link>
         </div>
+        
       </div>
       </div>
     </div>
