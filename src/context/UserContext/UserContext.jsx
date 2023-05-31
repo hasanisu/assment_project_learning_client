@@ -33,6 +33,7 @@ const UserContext = ({children}) => {
     }
 
     const updateUserProfile=(profile)=>{
+        setLoader(true);
         return updateProfile(auth.currentUser, profile);
     }
 

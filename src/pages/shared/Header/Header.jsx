@@ -86,16 +86,17 @@ const Header = () => {
                 user?.uid ?
                   <div className="flex ">
 
-                    <div>
+                    <div className="mt-1">
                       <Link to="/login" className=" text-red-400">
                         <button onClick={handleLogout} className="btn bg-lime-500">Logout</button>
                       </Link>
                     </div>
 
-                    <div className="tooltip tooltip-center mt-3" data-tip={user.displayName}>
+                    <div className="tooltip tooltip-center  mt-3" data-tip={user.displayName}>
+                    
                       {
                         user?.photoURL ?
-                          <img className="h-10 w-14 rounded-full " src={user.photoURL} alt="" />
+                          <img className="h-10 w-14 ms-10 rounded-full " src={user.photoURL} alt="" />
                           :
                           <FaUser className="h-8 w-10 ms-4" />
                       }
@@ -180,14 +181,55 @@ const Header = () => {
                   </Link>
                 </div>
 
+
+
+
+
                 <div className="py-10">
+                {
+                user?.uid ?
+                  <div className="flex ">
+
+                    <div className="mt-1">
+                      <Link to="/login" className=" text-red-400">
+                        <button onClick={handleLogout} className="btn bg-lime-500">Logout</button>
+                      </Link>
+                    </div>
+
+                    <div className="tooltip tooltip-center" data-tip={user.displayName}>
+                    
+                      {
+                        user?.photoURL ?
+                          <img className="h-14 w-14 ms-10 rounded-full " src={user.photoURL} alt="" />
+                          :
+                          <FaUser className="h-8 w-10 ms-4" />
+                      }
+                    </div>
+
+
+                  </div>
+                  :
+
                   <Link
+
                     to="/login"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="font-semibold leading-4 text-gray-900"
                   >
-                    Login <span aria-hidden="true">&rarr;</span>
+                    <button className="btn bg-lime-500 px-6">Login</button>
                   </Link>
+
+
+              }
                 </div>
+
+
+
+
+
+
+
+
+
               </div>
             </div>
           </Dialog.Panel>
