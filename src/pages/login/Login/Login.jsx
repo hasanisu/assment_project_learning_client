@@ -31,6 +31,7 @@ const Login = () => {
         form.reset();
         setError(" ");
         
+        
         console.log(user);
         if(user.emailVerified){
             setSuccess(true);
@@ -54,6 +55,7 @@ const Login = () => {
     loginWithGoogle()
       .then((result) => {
         const user = result.user;
+        navigate(from, {replace: true});
         console.log(user);
       })
       .catch((error) => {

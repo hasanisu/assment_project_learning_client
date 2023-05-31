@@ -6,18 +6,19 @@ import { Link } from "react-router-dom";
 import logos from "../../../materials/logos.jpeg";
 import logos1 from "../../../materials/111.png";
 import { AuthContext } from "../../../context/UserContext/UserContext";
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { user,userLogout } = useContext(AuthContext);
+  const { user, userLogout } = useContext(AuthContext);
   console.log(user);
 
-  const handleLogout=()=>{
+  const handleLogout = () => {
     userLogout()
-    .then(()=>{})
-    .catch((error)=>{})
+      .then(() => { })
+      .catch((error) => { })
   }
-  
+
 
   return (
     <div className=" bg-red-700" id="head-part">
@@ -51,19 +52,28 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link to='/courses' className="border border-red-600 py-2 px-4 rounded-lg hover:text-lime-500">
+            <Link to='/courses' className="border border-red-600 py-2  rounded-lg hover:text-lime-500">
               Courses
             </Link>
-            <Link to='/blogs' className="border border-red-600 py-2 px-4 rounded-lg hover:text-lime-500">
+            <Link to='/blogs' className="border border-red-600 py-2 rounded-lg hover:text-lime-500">
               Blogs
             </Link>
-            <Link to='/faq' className="border border-red-600 py-2 px-4 rounded-lg hover:text-lime-500">
+            <Link to='/faq' className="border border-red-600 py-2 rounded-lg hover:text-lime-500">
               FAQ
             </Link>
-            <Link to='/contacts' className="border border-red-600 py-2 px-4 rounded-lg hover:text-lime-500">
-              Contacts
-            </Link>
             
+
+          {/* theme doggle */}
+            <label for="Toggle2" className="inline-flex items-center space-x-2 cursor-pointer dark:text-gray-100">
+              <span>Light</span>
+              <span className="relative">
+                <input id="Toggle2" type="checkbox" className="hidden peer" />
+                <div className="w-10 h-4 rounded-full shadow bg-slate-300 peer-checked:bg-gray-600"></div>
+                <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto bg-violet-400"></div>
+              </span>
+              <span className="text-black">Dark</span>
+            </label>
+
           </div>
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end text-xl text-zinc-200">
@@ -77,13 +87,18 @@ const Header = () => {
                   <div className="flex ">
 
                     <div>
-                      <Link to="/login" className=" text-red-400 ">
-                         <button onClick={handleLogout} className="btn bg-lime-500">Logout</button>
+                      <Link to="/login" className=" text-red-400">
+                        <button onClick={handleLogout} className="btn bg-lime-500">Logout</button>
                       </Link>
                     </div>
 
-                    <div className="tooltip tooltip-right ms-10 mt-2" data-tip={user.displayName}>
-                      <img className="h-10 w-10 rounded-lg ms-10  " src={user.photoURL} alt="" />
+                    <div className="tooltip tooltip-center mt-3" data-tip={user.displayName}>
+                      {
+                        user?.photoURL ?
+                          <img className="h-10 w-14 rounded-full " src={user.photoURL} alt="" />
+                          :
+                          <FaUser className="h-8 w-10 ms-4" />
+                      }
                     </div>
 
 
@@ -102,6 +117,10 @@ const Header = () => {
               }
             </span>
           </div>
+
+
+
+
           <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
         </nav>
 

@@ -8,6 +8,8 @@ import Faq from "../pages/basic components/Faq/Faq";
 import Login from "../pages/login/Login/Login";
 import Register from "../pages/login/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import TermsAndCondition from "../pages/basic components/TermsAndCondition/TermsAndCondition";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -16,6 +18,7 @@ export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path: '/',
@@ -54,6 +57,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contacts',
                 element:<Contacts></Contacts>
+            },
+            {
+                path:'/terms',
+                element:<TermsAndCondition></TermsAndCondition>
             }
         ]
     }
