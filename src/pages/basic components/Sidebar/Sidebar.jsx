@@ -1,6 +1,7 @@
 import { LifebuoyIcon } from '@heroicons/react/24/outline';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import BrandCarousel from '../BrandCarousel/BrandCarousel';
 
 const Sidebar = () => {
     const [catagory, setCatagory] = useState([]);
@@ -11,12 +12,21 @@ const Sidebar = () => {
     },[])
     return (
         <div className='text-left bg-red-400 lg:h-full px-10'>
-            <h2 className='pt-20 text-xl'>DashBoard:{catagory.length}</h2>
+            <div className='text-left bg-red-400 lg:h-full px-10'>
+            <h2 className='pt-20 font-semibold text-xl text-blue-900'>DashBoard SideBar</h2>
             {
                 catagory.map(sidebar => <p className='mt-8 hover:underline' key={sidebar.id}>
                     <Link to={`/courseDetail/${sidebar.id}`}>{sidebar.name}</Link>
                     </p>)
             }
+            <div className="mt-52">
+              <h2>Advertisement</h2>  
+            <div className='flex justify-center'>
+            <BrandCarousel></BrandCarousel>
+            </div>
+            </div>
+        </div>
+       
         </div>
     );
 };

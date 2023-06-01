@@ -64,15 +64,7 @@ const Header = () => {
             
 
           {/* theme doggle */}
-            <label for="Toggle2" className="inline-flex items-center space-x-2 cursor-pointer dark:text-gray-100">
-              <span>Light</span>
-              <span className="relative">
-                <input id="Toggle2" type="checkbox" className="hidden peer" />
-                <div className="w-10 h-4 rounded-full shadow bg-slate-300 peer-checked:bg-gray-600"></div>
-                <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto bg-violet-400"></div>
-              </span>
-              <span className="text-black">Dark</span>
-            </label>
+           
 
           </div>
 
@@ -123,6 +115,17 @@ const Header = () => {
 
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+         <div className="hidden lg:block">
+         <label for="Toggle2" className="inline-flex items-center space-x-2 cursor-pointer dark:text-gray-100">
+              <span>Light</span>
+              <span className="relative">
+                <input id="Toggle2" type="checkbox" className="hidden peer" />
+                <div className="w-10 h-4 rounded-full shadow bg-slate-300 peer-checked:bg-gray-600"></div>
+                <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto bg-violet-400"></div>
+              </span>
+              <span className="text-black">Dark</span>
+            </label>
+         </div>
         </nav>
 
 

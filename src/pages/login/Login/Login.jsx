@@ -6,10 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-  const { userLogin, loginWithGoogle, loginWithGithub, setLoader } = useContext(AuthContext);
+  const { userLogin, loginWithGoogle, loginWithGithub, setLoader, forgetPassword } = useContext(AuthContext);
   const [error, setError] = useState();
   const [googleError, setgoogleError] = useState();
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -51,6 +52,7 @@ const Login = () => {
       })
   };
 
+
   const handletoGoogole = () => {
     loginWithGoogle()
       .then((result) => {
@@ -71,11 +73,28 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => {
-        console.error(error);
+        setError(error.message);
       }); 
   };
 
 
+  const handleToBlur=event=>{
+       const email = event.target.value;
+       setUserEmail(email);
+
+  }
+
+  const handleToForgetPass=(userEmail)=>{
+    if(!userEmail){
+      alert('please enter your email address')
+      return;
+    }
+    forgetPassword()
+    .then(()=>{
+      alert('Password Reset email sent. Please check your mail')
+    })
+    .catch(e=>console.error(e))
+  }
 
   return (
     <div className="hero min-h-screen bg-slate-500 ">
@@ -96,6 +115,7 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
+              onBlur={handleToBlur}
                 name="email"
                 type="text"
                 placeholder="email"
@@ -115,9 +135,9 @@ const Login = () => {
                 required
               />
               <label className="label">
-                <Link href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </Link>
+                <span href="#" className="label-text-alt">
+                  Forgot password? <button onClick={handleToForgetPass} className='btn-link'>Please Reset</button>
+                </span>
               </label>
             </div>
 

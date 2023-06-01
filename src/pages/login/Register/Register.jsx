@@ -33,7 +33,6 @@ const Register = () => {
                 console.log(user)
             })
             .catch(e => {
-                console.error(e)
                 setError(e.message);
             });
 
@@ -44,7 +43,7 @@ const Register = () => {
             }
             updateUserProfile(userProfile)
                 .then(() => { })
-                .catch(error => console.error(error))
+                .catch(error => setError(error.message))
         }
 
         const userVerification = () => {
@@ -54,7 +53,7 @@ const Register = () => {
                     console.log(user)
                 })
                 .catch(error => {
-                    console.error(error)
+                    setError(error.message)
                 })
         }
     };

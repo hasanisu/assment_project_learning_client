@@ -10,7 +10,8 @@ const CoursesInfo = () => {
     },[])
     return (
         <div className='bg-slate-500'>
-           <h2>Thsi is cousers ={courses.length}</h2>
+           <h2 className='mt-2 font-semibold text-3xl text-blue-900'>CHOOSE YOUR <span className="text-red-800">FUTURE</span> CAREER FROM HERE</h2>
+           <h4 className="text-purple-200">Available Courses: {courses.length}</h4>
            <div className='grid lg:grid-cols-2 gap-10 sm:grid-cols-1 p-10'>
             {
             courses.map(coures => <SingleCourse
