@@ -20,7 +20,7 @@ const Sidebar = () => {
                     </p>)
             }
             <div className="mt-52">
-              <h2>Advertisement</h2>  
+              <h2 className='text-xl text-slate-200'>Advertisement</h2>  
             <div className='flex justify-center'>
             <BrandCarousel></BrandCarousel>
             </div>

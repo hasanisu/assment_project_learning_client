@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const HomeSecond = () => {
-    return (
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  return (
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-400">
@@ -52,24 +53,30 @@ const HomeSecond = () => {
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
               Let us handle
               <br className="hidden md:block" />
-              your next{' '}
+              your next{" "}
               <span className="inline-block text-deep-purple-accent-400">
                 destination
               </span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
+              If you’re fortunate enough to be able to use your career for good,
+              but aren’t sure how, our career guide can help you: <br />{" "}
+              <span>Get new ideas for high-impact careers</span> <br />{" "}
+              <span>Compare your options in terms of impact</span> <br />
+              <span>Make a plan you feel confident in</span> <br />{" "}
+              <span>
+                It’s based on 10 years of research alongside academics at
+                Oxford. We’re a nonprofit, and everything we provide is free.
+              </span>
             </p>
           </div>
           <div>
-            <a
-              href="/"
+            <Link
+              to="/blogs"
               aria-label=""
               className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
-              Learn more
+              Visit our Blogs
               <svg
                 className="inline-block w-3 ml-2"
                 fill="currentColor"
@@ -77,7 +84,7 @@ const HomeSecond = () => {
               >
                 <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex items-center justify-center -mx-4 lg:pl-8">
@@ -103,7 +110,7 @@ const HomeSecond = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default HomeSecond;

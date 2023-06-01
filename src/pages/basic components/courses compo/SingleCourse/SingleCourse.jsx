@@ -13,7 +13,8 @@ const SingleCourse = ({ coures }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
+        <h2 className="card-title text-2xl text-orange-600">{title}</h2>
+        <h4 className="text-start font-semibold">Course Instructor :{teacher.name}</h4>
         <p className="lg:w-80 text-start">
         {
           details.length > 150 ?
@@ -26,7 +27,7 @@ const SingleCourse = ({ coures }) => {
         }
         </p>
         <div className="card-actions justify-end">
-          <Link to={`/courseDetail/${category_id}`}><button className="btn btn-primary">View Details</button></Link>
+          <Link to={`/courseDetail/${category_id}`}><button className="btn bg-lime-500 ">View Details</button></Link>
         </div>
       </div>
     </div>

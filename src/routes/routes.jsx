@@ -42,9 +42,9 @@ export const router = createBrowserRouter([
                 loader: ({params})=>fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path:'/course-confirmed/:id',
+                path:'/check-out/:id',
                 element:<PrivateRoutes> <ConfirmCourse></ConfirmCourse> </PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:5000/course-confirmed/${params.id}`)
+                loader: ({params})=>fetch(`http://localhost:5000/check-out/${params.id}`)
             },
             {
                 path:'/faq',

@@ -56,7 +56,7 @@ const CourseBuy = ({ buyCourse }) => {
         </div>
 
         <div className="mx-auto">
-          <Link to={`/course-confirmed/${_id}`}>
+          <Link to={`/check-out/${_id}`}>
             <button className="btn btn-primary mt-20">Get Premium Access</button>
           </Link>
         </div>

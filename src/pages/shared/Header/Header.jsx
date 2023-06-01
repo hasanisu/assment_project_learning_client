@@ -3,10 +3,9 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import logos from "../../../materials/logos.jpeg";
-import logos1 from "../../../materials/111.png";
+import logo from "../../../materials/logo-1.png";
 import { AuthContext } from "../../../context/UserContext/UserContext";
-import { FaUser } from 'react-icons/fa';
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,10 +14,9 @@ const Header = () => {
 
   const handleLogout = () => {
     userLogout()
-      .then(() => { })
-      .catch((error) => { })
-  }
-
+      .then(() => {})
+      .catch((error) => {});
+  };
 
   return (
     <div className=" bg-red-700" id="head-part">
@@ -32,7 +30,7 @@ const Header = () => {
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-14 w-18 rounded-lg" src={logos1} alt="" />
+              <img className="h-14 w-18 rounded-full" src={logo} alt="" />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -52,20 +50,24 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link to='/courses' className="border border-red-600 py-2  rounded-lg hover:text-lime-500">
+            <Link
+              to="/courses"
+              className="border border-red-600 py-2  rounded-lg hover:text-lime-500"
+            >
               Courses
             </Link>
-            <Link to='/blogs' className="border border-red-600 py-2 rounded-lg hover:text-lime-500">
+            <Link
+              to="/blogs"
+              className="border border-red-600 py-2 rounded-lg hover:text-lime-500"
+            >
               Blogs
             </Link>
-            <Link to='/faq' className="border border-red-600 py-2 rounded-lg hover:text-lime-500">
+            <Link
+              to="/faq"
+              className="border border-red-600 py-2 rounded-lg hover:text-lime-500"
+            >
               FAQ
             </Link>
-            
-
-          {/* theme doggle */}
-           
-
           </div>
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end text-xl text-zinc-200">
@@ -74,49 +76,53 @@ const Header = () => {
               <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
 
               {/* Condition Rendering */}
-              {
-                user?.uid ?
-                  <div className="flex ">
-
-                    <div className="mt-1">
-                      <Link to="/login" className=" text-red-400">
-                        <button onClick={handleLogout} className="btn bg-lime-500">Logout</button>
-                      </Link>
-                    </div>
-
-                    <div className="tooltip tooltip-center  mt-3" data-tip={user.displayName}>
-                    
-                      {
-                        user?.photoURL ?
-                          <img className="h-10 w-14 ms-10 rounded-full " src={user.photoURL} alt="" />
-                          :
-                          <FaUser className="h-8 w-10 ms-4" />
-                      }
-                    </div>
-
-
+              {user?.uid ? (
+                <div className="flex ">
+                  <div className="mt-1">
+                    <Link to="/login" className=" text-red-400">
+                      <button
+                        onClick={handleLogout}
+                        className="btn bg-lime-500"
+                      >
+                        Logout
+                      </button>
+                    </Link>
                   </div>
-                  :
 
-                  <Link
-
-                    to="/login"
-                    className="font-semibold leading-4 text-gray-900"
+                  <div
+                    className="tooltip tooltip-center  mt-3"
+                    data-tip={user.displayName}
                   >
-                    <button className="btn bg-lime-500 px-6">Login</button>
-                  </Link>
-
-
-              }
+                    {user?.photoURL ? (
+                      <img
+                        className="h-10 w-14 ms-10 rounded-full "
+                        src={user.photoURL}
+                        alt=""
+                      />
+                    ) : (
+                      <FaUser className="h-8 w-10 ms-4" />
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  to="/login"
+                  className="font-semibold leading-4 text-gray-900"
+                >
+                  <button className="btn bg-lime-500 px-6">Login</button>
+                </Link>
+              )}
             </span>
           </div>
 
-
-
-
           <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
-         <div className="hidden lg:block">
-         <label for="Toggle2" className="inline-flex items-center space-x-2 cursor-pointer dark:text-gray-100">
+          
+          {/* theme doggle */}
+          <div className="hidden lg:block">
+            <label
+              for="Toggle2"
+              className="inline-flex items-center space-x-2 cursor-pointer dark:text-gray-100"
+            >
               <span>Light</span>
               <span className="relative">
                 <input id="Toggle2" type="checkbox" className="hidden peer" />
@@ -125,15 +131,10 @@ const Header = () => {
               </span>
               <span className="text-black">Dark</span>
             </label>
-         </div>
+          </div>
         </nav>
 
-
-
-
         {/* For Mobile Devise */}
-
-
 
         <Dialog
           as="div"
@@ -170,69 +171,64 @@ const Header = () => {
                   >
                     Home
                   </Link>
-                  <Link to='/courses' className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  <Link
+                    to="/courses"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
                     Courses
                   </Link>
-                  <Link to='/blogs' className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  <Link
+                    to="/blogs"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
                     Blogs
                   </Link>
-                  <Link to='/faq' className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                  <Link
+                    to="/faq"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
                     FAQ
                   </Link>
-                  <Link className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                    Contact
-                  </Link>
                 </div>
-
-
-
-
 
                 <div className="py-10">
-                {
-                user?.uid ?
-                  <div className="flex ">
+                  {user?.uid ? (
+                    <div className="flex ">
+                      <div className="mt-1">
+                        <Link to="/login" className=" text-red-400">
+                          <button
+                            onClick={handleLogout}
+                            className="btn bg-lime-500"
+                          >
+                            Logout
+                          </button>
+                        </Link>
+                      </div>
 
-                    <div className="mt-1">
-                      <Link to="/login" className=" text-red-400">
-                        <button onClick={handleLogout} className="btn bg-lime-500">Logout</button>
-                      </Link>
-                    </div>
-
-                    <div className="tooltip tooltip-center" data-tip={user.displayName}>
-                    
-                      {
-                        user?.photoURL ?
-                          <img className="h-14 w-14 ms-10 rounded-full " src={user.photoURL} alt="" />
-                          :
+                      <div
+                        className="tooltip tooltip-center"
+                        data-tip={user.displayName}
+                      >
+                        {user?.photoURL ? (
+                          <img
+                            className="h-14 w-14 ms-10 rounded-full "
+                            src={user.photoURL}
+                            alt=""
+                          />
+                        ) : (
                           <FaUser className="h-8 w-10 ms-4" />
-                      }
+                        )}
+                      </div>
                     </div>
-
-
-                  </div>
-                  :
-
-                  <Link
-
-                    to="/login"
-                    className="font-semibold leading-4 text-gray-900"
-                  >
-                    <button className="btn bg-lime-500 px-6">Login</button>
-                  </Link>
-
-
-              }
+                  ) : (
+                    <Link
+                      to="/login"
+                      className="font-semibold leading-4 text-gray-900"
+                    >
+                      <button className="btn bg-lime-500 px-6">Login</button>
+                    </Link>
+                  )}
                 </div>
-
-
-
-
-
-
-
-
-
               </div>
             </div>
           </Dialog.Panel>
