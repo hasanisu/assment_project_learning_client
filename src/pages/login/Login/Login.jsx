@@ -81,15 +81,16 @@ const Login = () => {
   const handleToBlur=event=>{
        const email = event.target.value;
        setUserEmail(email);
+       console.log(email)
 
   }
 
-  const handleToForgetPass=(userEmail)=>{
+  const handleToForgetPass=()=>{
     if(!userEmail){
       alert('please enter your email address')
       return;
     }
-    forgetPassword()
+    forgetPassword(userEmail)
     .then(()=>{
       alert('Password Reset email sent. Please check your mail')
     })

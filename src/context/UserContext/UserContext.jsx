@@ -42,8 +42,8 @@ const UserContext = ({children}) => {
         return sendEmailVerification(auth.currentUser);
     };
 
-    const forgetPassword=(email)=>{
-        return sendPasswordResetEmail(auth, email)
+    const forgetPassword=(userEmail)=>{
+        return sendPasswordResetEmail(auth, userEmail)
     }
 
     const userLogout =()=>{
