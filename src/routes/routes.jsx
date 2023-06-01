@@ -39,12 +39,12 @@ export const router = createBrowserRouter([
             {
                 path: '/courseDetail/:id',
                 element:<CourseDetails></CourseDetails>,
-                loader: ({params})=>fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params})=>fetch(`https://assment-project-learning-server.vercel.app/category/${params.id}`)
             },
             {
                 path:'/check-out/:id',
                 element:<PrivateRoutes> <ConfirmCourse></ConfirmCourse> </PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:5000/check-out/${params.id}`)
+                loader: ({params})=>fetch(`https://assment-project-learning-server.vercel.app/check-out/${params.id}`)
             },
             {
                 path:'/faq',
