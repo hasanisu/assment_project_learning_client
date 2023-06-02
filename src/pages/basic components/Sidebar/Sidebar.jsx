@@ -19,7 +19,7 @@ const Sidebar = () => {
                     <Link to={`/courseDetail/${sidebar.id}`}>{sidebar.name}</Link>
                     </p>)
             }
-            <div className="mt-52">
+            <div className="mt-52 hidden lg:block">
               <h2 className='text-xl text-slate-200'>Advertisement</h2>  
             <div className='flex justify-center'>
             <BrandCarousel></BrandCarousel>
